@@ -10,27 +10,23 @@ class SplashPage extends GetView<SplashController> {
       body: Container(
         child: GetBuilder<SplashController>(
           init: SplashController(),
-          builder: (_) {
-            return Container(
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // CircularProgressIndicator(
-                    //   color: Colors.grey,
-                    // ),
-                    IconButton(
-                      onPressed: () => Get.toNamed(
-                        '/home',
-                        arguments: 'dgdf',
-                      ),
-                      icon: Icon(Icons.home),
-                    ),
-                  ],
-                ),
+          builder: (_) => Container(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // CircularProgressIndicator(
+                  //   color: Colors.grey,
+                  // ),
+                  Text(_.randInt.string),
+                  IconButton(
+                    onPressed: () => _.changeInt(),
+                    icon: Icon(Icons.change_circle_rounded),
+                  ),
+                ],
               ),
-            );
-          },
+            ),
+          ),
         ),
       ),
     );

@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
       theme: MyAppTheme().lightTheme,
       darkTheme: MyAppTheme().darkTheme,
       defaultTransition: Transition.fade,
+      initialRoute: '/',
       getPages: AppPages.pages,
       home: SplashPage(),
     );
