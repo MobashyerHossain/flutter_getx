@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_pattern/app/core/themes/app_theme.dart';
 import 'package:flutter_getx_pattern/app/modules/splash/spash_page.dart';
 import 'package:flutter_getx_pattern/app/routes/app_pages.dart';
 import 'package:get/get.dart';
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
-      // theme: appThemeData,
+      theme: MyAppTheme().lightTheme,
+      darkTheme: MyAppTheme().darkTheme,
       defaultTransition: Transition.fade,
       getPages: AppPages.pages,
       home: SplashPage(),

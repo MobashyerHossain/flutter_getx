@@ -13,7 +13,20 @@ class HomePage extends GetView<HomeController> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Home',
+                controller.numb,
+              ),
+              // ignore: deprecated_member_use
+              RaisedButton(
+                onPressed: () => Get.changeThemeMode(
+                    Get.isDarkMode ? ThemeMode.light : ThemeMode.dark),
+                splashColor: Colors.blueGrey,
+                child: Text(
+                  'Chnage Theme',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                ),
               ),
             ],
           ),
