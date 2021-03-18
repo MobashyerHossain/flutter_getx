@@ -8,13 +8,25 @@ class SplashPage extends GetView<SplashController> {
     return Scaffold(
       appBar: AppBar(title: Text('SplashPage')),
       body: Container(
-        child: GetX<SplashController>(
+        child: GetBuilder<SplashController>(
           init: SplashController(),
           builder: (_) {
             return Container(
               child: Center(
-                child: CircularProgressIndicator(
-                  color: Colors.grey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // CircularProgressIndicator(
+                    //   color: Colors.grey,
+                    // ),
+                    IconButton(
+                      onPressed: () => Get.toNamed(
+                        '/home',
+                        arguments: 'dgdf',
+                      ),
+                      icon: Icon(Icons.home),
+                    ),
+                  ],
                 ),
               ),
             );
