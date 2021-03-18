@@ -1,11 +1,12 @@
 import 'package:flutter_getx_pattern/app/data/models/request_token.dart';
 import 'package:flutter_getx_pattern/app/data/providers/auth_api.dart';
-import 'package:meta/meta.dart';
+import 'package:get/get.dart';
 
 class AuthRepository {
-  final AuthApi _authApi;
+  final AuthApi _authApi = Get.find<AuthApi>();
 
-  AuthRepository(this._authApi);
+  // constructor not needed if Dependency Injection and Get.find() is used
+  // AuthRepository(this._authApi);
 
   Future<RequestToken> newRequestToken() => _authApi.newRequestToken();
 
