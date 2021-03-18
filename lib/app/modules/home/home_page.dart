@@ -24,31 +24,41 @@ class HomePage extends GetView<HomeController> {
           )
         ],
       ),
-      body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Username",
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 30),
+          color: Colors.transparent,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextField(
+                  keyboardAppearance: Brightness.dark,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    labelText: "Username",
+                  ),
                 ),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Password",
+                SizedBox(
+                  height: 10,
                 ),
-                obscureText: true,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              OutlinedButton(
-                onPressed: () => {},
-                child: Text('Log In'),
-              ),
-            ],
+                TextField(
+                  keyboardAppearance: Brightness.dark,
+                  decoration: InputDecoration(
+                    labelText: "Password",
+                  ),
+                  obscureText: true,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                OutlinedButton(
+                  onPressed: () => {},
+                  child: Text('Log In'),
+                ),
+              ],
+            ),
           ),
         ),
       ),
