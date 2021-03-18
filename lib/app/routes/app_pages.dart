@@ -1,3 +1,5 @@
+import 'package:flutter_getx_pattern/app/modules/details/details_binding.dart';
+import 'package:flutter_getx_pattern/app/modules/details/details_page.dart';
 import 'package:flutter_getx_pattern/app/modules/home/home_binding.dart';
 import 'package:flutter_getx_pattern/app/modules/home/home_page.dart';
 import 'package:flutter_getx_pattern/app/modules/splash/spash_page.dart';
@@ -16,6 +18,11 @@ abstract class AppPages {
       name: Routes.HOME,
       page: () => HomePage(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: Routes.DETAILS,
+      page: () => DetailsPage(),
+      binding: DetailsBinding(),
     ),
   ];
 }

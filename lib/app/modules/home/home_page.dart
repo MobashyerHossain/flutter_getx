@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_pattern/app/modules/home/home_controller.dart';
+import 'package:flutter_getx_pattern/app/routes/app_routes.dart';
 import 'package:get/get.dart';
 
 class HomePage extends GetView<HomeController> {
@@ -22,6 +23,17 @@ class HomePage extends GetView<HomeController> {
                 splashColor: Colors.blueGrey,
                 child: Text(
                   'Chnage Theme',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+              // ignore: deprecated_member_use
+              RaisedButton(
+                onPressed: () => Get.offNamed(Routes.SPLASH),
+                child: Text(
+                  'Go Back',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
