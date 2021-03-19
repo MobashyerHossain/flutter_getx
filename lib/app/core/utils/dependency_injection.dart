@@ -1,4 +1,5 @@
 // import 'package:flutter_getx_pattern/app/data/models/request_token.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter_getx_pattern/app/data/providers/auth_api.dart';
 import 'package:flutter_getx_pattern/app/data/repositories/auth_repository.dart';
 import 'package:get/get.dart';
@@ -11,6 +12,11 @@ import 'package:get/get.dart';
 
 class DependencyInjection {
   static void init() {
+    Get.lazyPut<Dio>(
+      () => Dio(
+        BaseOptions(baseUrl: 'https://api.themoviedb.org/3'),
+      ),
+    );
     Get.lazyPut<AuthApi>(
       () => AuthApi(),
     );

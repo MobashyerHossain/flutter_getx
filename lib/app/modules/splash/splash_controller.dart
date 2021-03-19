@@ -17,14 +17,15 @@ class SplashController extends GetxController {
 
   _init() async {
     try {
-      RequestToken requestToken = await _authRepository.newRequestToken();
-      Future.delayed(
-        Duration(seconds: 1),
-        () => Get.offNamed(
+      Future<RequestToken> requestToken = _authRepository.newRequestToken();
+      print(requestToken);
+      requestToken.whenComplete(() {
+        Get.offNamed(
           AppRoutes.HOME,
-          arguments: requestToken,
-        ),
-      );
+          arguments:
+              requestToken.then((value) => value.requestToken).toString(),
+        );
+      });
     } catch (e) {
       print(e);
     }

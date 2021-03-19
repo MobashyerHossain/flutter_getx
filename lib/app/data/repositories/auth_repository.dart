@@ -1,3 +1,4 @@
+import 'package:flutter_getx_pattern/app/data/models/request_body.dart';
 import 'package:flutter_getx_pattern/app/data/models/request_token.dart';
 import 'package:flutter_getx_pattern/app/data/providers/auth_api.dart';
 import 'package:get/get.dart';
@@ -8,7 +9,17 @@ class AuthRepository {
   // constructor not needed if Dependency Injection and Get.find() is used
   // AuthRepository(this._authApi);
 
-  Future<RequestToken> newRequestToken() => _authApi.newRequestToken();
+  Future<RequestToken> newRequestToken() async {
+    final _api = _authApi.newRequestToken();
+    return _api;
+  }
+
+  Future<RequestToken> authWithLogin(RequestBody requestBody) async {
+    final _api = _authApi.validateWithLogin(
+      data: requestBody,
+    );
+    return _api;
+  }
 
   // getAll() {
   //   return apiClient.getAll();
